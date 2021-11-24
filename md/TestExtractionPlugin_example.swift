@@ -114,7 +114,7 @@ struct XCTestFileParser {
                 return [] // no testing classes found
             }
 
-            let testClasses = types.filter { $0.conforms(candidates: types).contains("XCTestCase") }
+            let testClasses = types.filter { $0.conforms(candidates: types).contains("BaseUITest") }
 
             let testCases: [[ExtractionTestCase]] = testClasses.compactMap {
                 guard let suite = $0.name,
