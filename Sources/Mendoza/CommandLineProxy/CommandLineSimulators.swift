@@ -131,13 +131,7 @@ extension CommandLineProxy {
         func enableLowQualityGraphicOverrides() throws {
             _ = try executer.execute("defaults write com.apple.iphonesimulator GraphicsQualityOverride 10")
         }
-
-        func enableXcode11ReleaseNotesWorkarounds(on simulator: Simulator) throws {
-            // See release notes workarounds: https://developer.apple.com/documentation/xcode_release_notes/xcode_11_release_notes?language=objc
-            // These settings are hot loaded no reboot of the device is necessary
-            _ = try? executer.execute("xcrun simctl spawn '\(simulator.id)' defaults write com.apple.springboard FBLaunchWatchdogScale 2")
-        }
-
+        
         func enableXcode13Workarounds(on simulator: Simulator) throws {
             // See https://developer.apple.com/forums/thread/683277?answerId=682047022#682047022
             let path = "\(simulatorSettingsPath(for: simulator))/com.apple.suggestions.plist"
