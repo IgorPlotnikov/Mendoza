@@ -108,7 +108,6 @@ class SimulatorSetupOperation: BaseOperation<[(simulator: Simulator, node: Node)
                 bootQueue.waitUntilAllOperationsAreFinished()
 
                 for nodeSimulator in nodeSimulators {
-                    try proxy.enableXcode11ReleaseNotesWorkarounds(on: nodeSimulator)
                     try proxy.enableXcode13Workarounds(on: nodeSimulator)
                     try proxy.disableSlideToType(on: nodeSimulator)
 
