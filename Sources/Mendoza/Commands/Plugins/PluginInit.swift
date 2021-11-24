@@ -32,11 +32,11 @@ struct PluginInit {
                 try EventPlugin(baseUrl: currentUrl).writeTemplate()
             }
         case "sorting":
-            if Bariloche.ask("\nDo you want to install the `Test Sorting` plugin?\n".underline + "This plugin allows to sort `XCTestCase`'s in order to optimize total execution time of test sessions") {
+            if Bariloche.ask("\nDo you want to install the `Test Sorting` plugin?\n".underline + "This plugin allows to sort `BaseUITest`'s in order to optimize total execution time of test sessions") {
                 try TestSortingPlugin(baseUrl: currentUrl).writeTemplate()
             }
         case "extract":
-            if Bariloche.ask("\nDo you want to install the `Test Extraction` plugin?\n".underline + "This plugin allows to customize which `XCTestCase`'s test method should be distributed to testing nodes") {
+            if Bariloche.ask("\nDo you want to install the `Test Extraction` plugin?\n".underline + "This plugin allows to customize which `BaseUITest`'s test method should be distributed to testing nodes") {
                 try TestExtractionPlugin(baseUrl: currentUrl).writeTemplate()
             }
         case "precompilation":
